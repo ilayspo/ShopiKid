@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import DriveScreen from '../screens/DriveScreen';
 import MapScreen from '../screens/MapScreen';
@@ -7,13 +7,14 @@ import ResultsScreen from '../screens/ResultsScreen';
 import ShopScreen from '../screens/ShopScreen';
 import SplashScreen from '../screens/SplashScreen';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
     <Stack.Navigator
       initialRouteName="Splash"
-      screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
+      screenOptions={{ headerShown: false, animation: 'slide_from_right' }}
+    >
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Map" component={MapScreen} />
       <Stack.Screen name="Drive" component={DriveScreen} />

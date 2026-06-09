@@ -42,10 +42,7 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     borderRadius: 32,
     elevation: 4,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 6,
-    shadowOffset: { width: 0, height: 3 },
+    boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
   },
   buttonText: {
     color: '#fff',
