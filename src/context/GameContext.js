@@ -10,6 +10,7 @@ export function GameProvider({ children }) {
   const [route, setRoute] = useState([]);
   const [currentStore, setCurrentStore] = useState(null);
   const [missionItems, setMissionItems] = useState([]);
+  const [visitedStores, setVisitedStores] = useState([]);
   const [gameTime, setGameTime] = useState(0);
 
   const resetGame = () => {
@@ -17,24 +18,24 @@ export function GameProvider({ children }) {
     setCoins(STARTING_COINS);
     setRoute([]);
     setCurrentStore(null);
+    setVisitedStores([]);
     setGameTime(0);
+  };
+
+  const markStoreVisited = (storeId) => {
+    setVisitedStores((prev) => prev.includes(storeId) ? prev : [...prev, storeId]);
   };
 
   return (
     <GameContext.Provider
       value={{
-        cart,
-        setCart,
-        coins,
-        setCoins,
-        route,
-        setRoute,
-        currentStore,
-        setCurrentStore,
-        missionItems,
-        setMissionItems,
-        gameTime,
-        setGameTime,
+        cart, setCart,
+        coins, setCoins,
+        route, setRoute,
+        currentStore, setCurrentStore,
+        missionItems, setMissionItems,
+        visitedStores, markStoreVisited,
+        gameTime, setGameTime,
         resetGame,
       }}>
       {children}
