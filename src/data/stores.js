@@ -1,30 +1,30 @@
 export const stores = [
   {
     id: 'veg',
-    name: 'חנות ירקות',
+    name: 'Veggie Store',
     icon: '🥦',
     color: '#4CAF50',
-    description: 'פירות וירקות טריים',
+    description: 'Fresh fruits and vegetables',
   },
   {
     id: 'home',
-    name: 'כלי בית',
+    name: 'Home Goods',
     icon: '🏠',
     color: '#2196F3',
-    description: 'ציוד לבית ולמטבח',
+    description: 'Kitchen & household supplies',
   },
   {
     id: 'kiosk',
-    name: 'קיוסק',
+    name: 'Kiosk',
     icon: '🏪',
     color: '#FF9800',
-    description: 'חטיפים, ממתקים ושתייה',
+    description: 'Snacks, sweets & drinks',
   },
   {
     id: 'spice',
-    name: 'חנות תבלינים',
+    name: 'Spice Store',
     icon: '🌶️',
     color: '#F44336',
-    description: 'תבלינים ותוספות לבישול',
+    description: 'Spices & cooking extras',
   },
 ];

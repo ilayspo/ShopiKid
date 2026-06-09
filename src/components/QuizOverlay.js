@@ -30,7 +30,7 @@ export default function QuizOverlay({ quiz, visible, onClose }) {
     <Modal transparent animationType="fade" visible={visible}>
       <View style={styles.overlay}>
         <View style={styles.card}>
-          <Text style={styles.badge}>❓ שאלת חשבון</Text>
+          <Text style={styles.badge}>❓ Math Question</Text>
           <Text style={styles.question}>{quiz.question}</Text>
           <View style={styles.options}>
             {quiz.options.map((option, i) => {
@@ -50,10 +50,10 @@ export default function QuizOverlay({ quiz, visible, onClose }) {
           {answered && (
             <View style={styles.result}>
               <Text style={styles.resultText}>
-                {correct ? `✅ נכון! קיבלת 🪙 ${quiz.reward}` : '❌ טעות, נסה בפעם הבאה!'}
+                {correct ? `✅ Correct! You got 🪙 ${quiz.reward}` : '❌ Wrong, try next time!'}
               </Text>
               <TouchableOpacity style={styles.closeBtn} onPress={handleClose}>
-                <Text style={styles.closeBtnText}>המשך</Text>
+                <Text style={styles.closeBtnText}>Continue</Text>
               </TouchableOpacity>
             </View>
           )}

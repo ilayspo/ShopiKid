@@ -10,34 +10,34 @@ export default function CheckoutOverlay({ visible, onConfirm, onCancel }) {
     <Modal transparent animationType="slide" visible={visible}>
       <View style={styles.overlay}>
         <View style={styles.sheet}>
-          <Text style={styles.title}>🧾 חשבון</Text>
+          <Text style={styles.title}>🧾 Receipt</Text>
           <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
             {cart.map((item) => (
               <View key={item.id} style={styles.row}>
                 <Text style={styles.rowIcon}>{item.icon}</Text>
                 <Text style={styles.rowName}>{item.name}</Text>
                 <Text style={styles.rowQty}>×{item.qty}</Text>
-                <Text style={styles.rowPrice}>{item.price * item.qty} ₪</Text>
+                <Text style={styles.rowPrice}>{item.price * item.qty} coins</Text>
               </View>
             ))}
           </ScrollView>
           <View style={styles.divider} />
           <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>סך הכל:</Text>
-            <Text style={styles.totalAmount}>{total} ₪</Text>
+            <Text style={styles.totalLabel}>Total:</Text>
+            <Text style={styles.totalAmount}>{total} coins</Text>
           </View>
           <View style={styles.balanceRow}>
-            <Text style={styles.balanceLabel}>מטבעות שיישארו:</Text>
+            <Text style={styles.balanceLabel}>Coins remaining:</Text>
             <Text style={[styles.balanceAmount, coins - total < 0 && { color: '#E53935' }]}>
               {coins - total} 🪙
             </Text>
           </View>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.cancelButton} onPress={onCancel}>
-              <Text style={styles.cancelText}>ביטול</Text>
+              <Text style={styles.cancelText}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.confirmButton} onPress={onConfirm}>
-              <Text style={styles.confirmText}>שלם! ✓</Text>
+              <Text style={styles.confirmText}>Pay! ✓</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   rowIcon: { fontSize: 22 },
   rowName: { flex: 1, fontSize: 15 },
   rowQty: { fontSize: 14, color: '#888' },
-  rowPrice: { fontSize: 15, fontWeight: '700', color: '#F57F17', minWidth: 48, textAlign: 'right' },
+  rowPrice: { fontSize: 15, fontWeight: '700', color: '#F57F17', minWidth: 60, textAlign: 'right' },
   divider: { height: 1, backgroundColor: '#EEE', marginVertical: 12 },
   totalRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 6 },
   totalLabel: { fontSize: 18, fontWeight: 'bold' },

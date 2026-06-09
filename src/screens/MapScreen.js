@@ -15,10 +15,10 @@ export default function MapScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>🗺️ מפת העיר</Text>
+        <Text style={styles.title}>🗺️ City Map</Text>
         <Text style={styles.coins}>🪙 {coins}</Text>
       </View>
-      <Text style={styles.subtitle}>בחר את החנויות שתרצה לבקר</Text>
+      <Text style={styles.subtitle}>Select the stores you want to visit</Text>
 
       <ScrollView contentContainerStyle={styles.storeGrid}>
         {stores.map((store) => {
@@ -40,7 +40,7 @@ export default function MapScreen({ navigation }) {
         style={[styles.goButton, route.length === 0 && styles.goButtonDisabled]}
         disabled={route.length === 0}
         onPress={() => navigation.navigate('Drive')}>
-        <Text style={styles.goButtonText}>יאללה נסע! 🚗</Text>
+        <Text style={styles.goButtonText}>Let's Go! 🚗</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

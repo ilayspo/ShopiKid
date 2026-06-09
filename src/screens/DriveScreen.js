@@ -9,7 +9,6 @@ export default function DriveScreen({ navigation }) {
   const carAnim = useRef(new Animated.Value(0)).current;
 
   const routeStores = stores.filter((s) => route.includes(s.id));
-  const currentIndex = useRef(0);
 
   useEffect(() => {
     Animated.loop(
@@ -27,9 +26,9 @@ export default function DriveScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>🚗 בדרך לחנות...</Text>
+      <Text style={styles.title}>🚗 On the way...</Text>
       <Animated.Text style={[styles.car, { transform: [{ translateY: carAnim }] }]}>🚙</Animated.Text>
-      <Text style={styles.subtitle}>המסלול שלך:</Text>
+      <Text style={styles.subtitle}>Your route:</Text>
       <View style={styles.routeList}>
         {routeStores.map((store, i) => (
           <TouchableOpacity

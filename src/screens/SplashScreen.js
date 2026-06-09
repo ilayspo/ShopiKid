@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SplashScreen({ navigation }) {
@@ -6,9 +6,9 @@ export default function SplashScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <Text style={styles.emoji}>🛒</Text>
       <Text style={styles.title}>ShopiKid</Text>
-      <Text style={styles.subtitle}>המשחק של הקניות</Text>
+      <Text style={styles.subtitle}>The Shopping Game</Text>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
-        <Text style={styles.buttonText}>התחל משחק!</Text>
+        <Text style={styles.buttonText}>Start Game!</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

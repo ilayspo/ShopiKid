@@ -12,9 +12,9 @@ export default function TrunkView() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>🚗 תא המטען</Text>
+      <Text style={styles.title}>🚗 Trunk</Text>
       {cart.length === 0 ? (
-        <Text style={styles.empty}>העגלה ריקה</Text>
+        <Text style={styles.empty}>Cart is empty</Text>
       ) : (
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {cart.map((item) => {
@@ -24,7 +24,7 @@ export default function TrunkView() {
                 <Text style={styles.icon}>{item.icon}</Text>
                 <Text style={styles.name}>{item.name}</Text>
                 <Text style={styles.qty}>×{item.qty}</Text>
-                {isExpired && <Text style={styles.expiredBadge}>⚠️ נרקב</Text>}
+                {isExpired && <Text style={styles.expiredBadge}>⚠️ Spoiled</Text>}
               </View>
             );
           })}

@@ -28,7 +28,7 @@ export default function EventOverlay({ event, visible, onClose }) {
             </Text>
           )}
           <TouchableOpacity style={styles.button} onPress={handleClose}>
-            <Text style={styles.buttonText}>אוקיי!</Text>
+            <Text style={styles.buttonText}>OK!</Text>
           </TouchableOpacity>
         </View>
       </View>

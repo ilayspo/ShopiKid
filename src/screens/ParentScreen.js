@@ -19,38 +19,38 @@ export default function ParentScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <Text style={styles.backText}>‹ חזור</Text>
+          <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>👨‍👩‍👧 מסך הורים</Text>
+        <Text style={styles.title}>👨‍👩‍👧 Parents</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>סיכום המשחק</Text>
-          <Text style={styles.stat}>🪙 מטבעות שנותרו: {coins}</Text>
-          <Text style={styles.stat}>💸 הוצאות: {totalSpent} ₪</Text>
-          <Text style={styles.stat}>🛍️ פריטים שנקנו: {cart.reduce((s, i) => s + i.qty, 0)}</Text>
+          <Text style={styles.sectionTitle}>Game Summary</Text>
+          <Text style={styles.stat}>🪙 Coins remaining: {coins}</Text>
+          <Text style={styles.stat}>💸 Total spent: {totalSpent} coins</Text>
+          <Text style={styles.stat}>🛍️ Items bought: {cart.reduce((s, i) => s + i.qty, 0)}</Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>פריטים שנקנו</Text>
+          <Text style={styles.sectionTitle}>Items Purchased</Text>
           {cart.length === 0 ? (
-            <Text style={styles.emptyText}>לא נקנו פריטים</Text>
+            <Text style={styles.emptyText}>No items purchased</Text>
           ) : (
             cart.map((item) => (
               <View key={item.id} style={styles.cartRow}>
                 <Text style={styles.cartIcon}>{item.icon}</Text>
                 <Text style={styles.cartName}>{item.name}</Text>
                 <Text style={styles.cartQty}>×{item.qty}</Text>
-                <Text style={styles.cartPrice}>{item.price * item.qty} ₪</Text>
+                <Text style={styles.cartPrice}>{item.price * item.qty} coins</Text>
               </View>
             ))
           )}
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>הגדר משימה לילד</Text>
-          <Text style={styles.hint}>בחר פריטים שהילד צריך לקנות במשחק הבא</Text>
+          <Text style={styles.sectionTitle}>Set a Mission for the Kid</Text>
+          <Text style={styles.hint}>Select items the kid must buy in the next game</Text>
           {cart.map((item) => {
             const inMission = missionItems.some((m) => m.id === item.id);
             return (

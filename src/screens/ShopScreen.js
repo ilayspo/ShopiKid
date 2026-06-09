@@ -26,7 +26,7 @@ export default function ShopScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <Text style={styles.backText}>‹ חזור</Text>
+          <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
         <Text style={styles.title}>{currentStore.icon} {currentStore.name}</Text>
         <Text style={styles.coins}>🪙 {coins}</Text>
@@ -47,7 +47,7 @@ export default function ShopScreen({ navigation }) {
               <Text style={styles.productName}>{item.name}</Text>
               <Text style={styles.productPrice}>🪙 {item.price}</Text>
               {item.survivalTime !== 9999 && (
-                <Text style={styles.survivalBadge}>⏱ {item.survivalTime}′</Text>
+                <Text style={styles.survivalBadge}>⏱ {item.survivalTime} min</Text>
               )}
               {inCart && <Text style={styles.qtyBadge}>×{inCart.qty}</Text>}
             </TouchableOpacity>
@@ -56,7 +56,7 @@ export default function ShopScreen({ navigation }) {
       />
 
       <TouchableOpacity style={styles.doneButton} onPress={() => navigation.navigate('Drive')}>
-        <Text style={styles.doneText}>סיימתי כאן ✓</Text>
+        <Text style={styles.doneText}>Done here ✓</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

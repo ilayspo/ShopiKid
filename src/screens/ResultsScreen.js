@@ -20,18 +20,18 @@ export default function ResultsScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>{missionComplete ? '🎉 כל הכבוד!' : '🛒 תוצאות'}</Text>
+      <Text style={styles.title}>{missionComplete ? '🎉 Well Done!' : '🛒 Results'}</Text>
       <Text style={styles.subtitle}>
-        {missionComplete ? 'השלמת את המשימה!' : 'סיכום הקניות שלך'}
+        {missionComplete ? 'You completed the mission!' : 'Your shopping summary'}
       </Text>
 
       <View style={styles.summaryBox}>
-        <Text style={styles.summaryItem}>🪙 מטבעות שנותרו: {coins}</Text>
-        <Text style={styles.summaryItem}>💸 הוצאת בסך הכל: {totalSpent} ₪</Text>
-        <Text style={styles.summaryItem}>🛍️ פריטים בעגלה: {cart.length}</Text>
+        <Text style={styles.summaryItem}>🪙 Coins remaining: {coins}</Text>
+        <Text style={styles.summaryItem}>💸 Total spent: {totalSpent} coins</Text>
+        <Text style={styles.summaryItem}>🛍️ Items in cart: {cart.length}</Text>
       </View>
 
-      <Text style={styles.cartTitle}>מה שקנית:</Text>
+      <Text style={styles.cartTitle}>What you bought:</Text>
       <FlatList
         data={cart}
         keyExtractor={(item) => item.id}
@@ -41,17 +41,17 @@ export default function ResultsScreen({ navigation }) {
             <Text style={styles.itemIcon}>{item.icon}</Text>
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemQty}>×{item.qty}</Text>
-            <Text style={styles.itemPrice}>{item.price * item.qty} ₪</Text>
+            <Text style={styles.itemPrice}>{item.price * item.qty} coins</Text>
           </View>
         )}
       />
 
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.parentButton} onPress={() => navigation.navigate('Parent')}>
-          <Text style={styles.parentButtonText}>👨‍👩‍👧 הורים</Text>
+          <Text style={styles.parentButtonText}>👨‍👩‍👧 Parents</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.resetButton} onPress={resetGame}>
-          <Text style={styles.resetButtonText}>משחק חדש 🔄</Text>
+          <Text style={styles.resetButtonText}>New Game 🔄</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -9,13 +9,13 @@ export default function StorePopup({ store, visible, onEnter, onSkip }) {
         <View style={styles.popup}>
           <Text style={styles.storeIcon}>{store.icon}</Text>
           <Text style={styles.storeName}>{store.name}</Text>
-          <Text style={styles.question}>רוצה להיכנס לחנות?</Text>
+          <Text style={styles.question}>Want to enter the store?</Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
-              <Text style={styles.skipText}>דלג</Text>
+              <Text style={styles.skipText}>Skip</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.enterButton} onPress={onEnter}>
-              <Text style={styles.enterText}>כנס לחנות!</Text>
+              <Text style={styles.enterText}>Enter Store!</Text>
             </TouchableOpacity>
           </View>
         </View>

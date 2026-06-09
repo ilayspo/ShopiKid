@@ -9,7 +9,7 @@ export default function MissionPanel() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>📋 המשימה שלך</Text>
+      <Text style={styles.title}>📋 Your Mission</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scroll}>
         {missionItems.map((mission) => {
           const product = products.find((p) => p.id === mission.id);
